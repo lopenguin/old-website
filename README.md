@@ -1,3 +1,2 @@
 # lopenguin.github.io
-Hello.
-Testing
+My personal webpage.
