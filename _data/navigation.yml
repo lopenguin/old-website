@@ -14,18 +14,16 @@ main:
     sections:
         - about
         - services
-        - pricing
-        - facts
         - clients
-        - testimonials
+        - facts
 
   #resume card
-  # - title: "Resume"
-  #   icon: "android-list"
-  #   slug: "resume"
-  #   sections:
-  #       - resume
-  #       - skills
+  - title: "Resume"
+    icon: "android-list"
+    slug: "resume"
+    sections:
+        - resume
+        - skills
 
   #works card
   - title: "works"

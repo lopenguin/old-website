@@ -9,7 +9,7 @@
 
 main:
   bgimage: "assets/img/bg.jpg"
-  photo: ""
+  photo: "assets/img/Lorenzo_Shaikewitz.jpg"
   name: "Lorenzo Shaikewitz"
   typed:
     - text: "Mechanical Engineer"

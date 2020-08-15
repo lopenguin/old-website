@@ -29,20 +29,20 @@ about:
 
 ### Services [ services ]
 services:
-  title: "My Services"
+  title: "My Interests"
   items:
     - icon: "code"
-      name: "Web Development"
+      name: "Robotics"
       text: "Modern and mobile-ready website that will help you reach all of your marketing."
       h_line: 1
 
     - icon: "music-note"
-      name: "Music Writing"
+      name: "Academic Research"
       text: "Music copying, transcription, arranging and composition services."
       h_line: 1
 
     - icon: "speakerphone"
-      name: "Advetising"
+      name: "Machining"
       text: "Advertising services include television, radio, print, mail and web."
       h_line: 0
 
@@ -129,7 +129,7 @@ facts:
 
 ### Clients [ clients ]
 clients:
-  title: "Clients"
+  title: "Projects"
   items:
     - url: "https://www.google.com"
       image: "assets/img/clients/client_1.png"
