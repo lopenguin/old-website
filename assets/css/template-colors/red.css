@@ -147,8 +147,13 @@ button:hover {
 
 .background.gradient {
 	background: #50a3a2;
-	background: -webkit-linear-gradient(top left, #c33764 0%, #c43338 100%);
-	background: linear-gradient(to bottom right, #c33764 0%, #c43338 100%);
+  background: -webkit-linear-gradient(top left, #c43338 0%, #ff9800 100%);
+  background: linear-gradient(to bottom right, #c43338 0%, #ff9800 100%);
+	/* background: -webkit-linear-gradient(top left, #8c071d 0%, #c43338 100%);
+	background: linear-gradient(to bottom right, #8c071d 0%, #c43338 100%); */
+  /* background-image: url("../../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 1000px 1000px; */
 }
 
 /*
