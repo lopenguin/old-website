@@ -8,21 +8,24 @@ about:
   title: "About Me"
   text: "
         <p>
-          <strong>Hello! I’m Lorenzo.</strong><br> Mechanical engineering student at Caltech. I have rich experience in web site design and building, also I am good at wordpress. I love to talk with you about our unique.
+          <strong>Hello! I’m Lorenzo.</strong><br>
+          I study mechanical engineering at Caltech.
+          My primary interests lie in robotic and mechatronic systems,
+          including design, controls, analysis, and prototyping.
         </p>
         "
   list:
-    - label: "Age"
-      value: "19"
-
     - label: "University"
       value: "Caltech"
 
     - label: "Major"
-      value: "Mechanical Engineering"
+      value: "Mechanical"
 
-    - label: "Address"
-      value: "California, USA"
+    - label: "Graduation Year"
+      value: "2023"
+    #
+    # - label: "Grad Year"
+    #   value: "2023"
 
 ### Services [ services ]
 services:

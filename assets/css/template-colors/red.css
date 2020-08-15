@@ -15,10 +15,10 @@
 	background-color: rgba(199, 10, 10, 0.4); /*232, 103, 107, 0.4);*/
 }
 
-.preloader .spinner .double-bounce1,
+/* .preloader .spinner .double-bounce1,
 .preloader .spinner .double-bounce2 {
 	background: #e8676b;
-}
+} */
 
 .lnk:hover,
 .button:hover {
