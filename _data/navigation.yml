@@ -13,8 +13,8 @@ main:
     slug: "about"
     sections:
         - about
-        - services
         - clients
+        - services
         - facts
 
   #resume card
@@ -26,9 +26,9 @@ main:
         - skills
 
   #works card
-  - title: "works"
-    icon: "paintbrush"
-    slug: "works"
+  - title: "Projects"
+    icon: "ios-cog"
+    slug: "projects"
     sections:
         - portfolio
 
@@ -39,10 +39,10 @@ main:
     sections:
         - blog
 
-  #contact card
-  - title: "Contact"
-    icon: "at"
-    slug: "contacts"
-    sections:
-        - contacts-info
-        - contacts-form
+  # #contact card
+  # - title: "Contact"
+  #   icon: "at"
+  #   slug: "contacts"
+  #   sections:
+  #       - contacts-info
+  #       - contacts-form

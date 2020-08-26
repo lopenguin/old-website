@@ -9,9 +9,8 @@ about:
   text: "
         <p>
           <strong>Hello! I’m Lorenzo Shaikewitz.</strong><br>
-          I study mechanical engineering at Caltech.
-          My primary interests lie in robotic and mechatronic systems,
-          including design, controls, analysis, and prototyping.
+          I study mechanical engineering at Caltech. My primary interests lie in robotic and mechatronic systems, including design, controls, analysis, and prototyping.
+          <strong>Warning: this website is under construction</strong>
         </p>
         "
   list:
@@ -113,10 +112,10 @@ pricing:
 
 ### Facts [ facts ]
 facts:
-  title: "Fun Fact"
+  title: "Other Interests"
   items:
     - icon: "disc"
-      name: "80 Albumes Listened"
+      name: "Ultimate Frisbee"
 
     - icon: "trophy"
       name: "15 Awards Won"
@@ -129,19 +128,19 @@ facts:
 
 ### Clients [ clients ]
 clients:
-  title: "Projects"
+  title: "Top Projects"
   items:
     - url: "https://www.google.com"
-      image: "assets/img/clients/client_1.png"
+      image: "assets/img/project_thumbnails/walker_mk1_icon.jpg"
 
     - url: "https://www.google.com"
-      image: "assets/img/clients/client_2.png"
+      image: "assets/img/project_thumbnails/ME_13_final_icon.jpg"
 
     - url: "https://www.google.com"
-      image: "assets/img/clients/client_3.png"
+      image: "assets/img/project_thumbnails/client_3.png"
 
     - url: "https://www.google.com"
-      image: "assets/img/clients/client_4.png"
+      image: "assets/img/project_thumbnails/client_4.png"
 
 ### Testimonials [ testimonials ]
 testimonials:
@@ -163,23 +162,24 @@ testimonials:
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
 ### Resume [ resume ]
+# Add links!
 resume:
   title: "Resume"
   experience:
     title: "Experience"
     icon: "briefcase"
     items:
-      - year: "2013 - Present"
-        role: "Art Director"
-        company: "Facebook Inc."
-        text: "Collaborate with creative and development teams on the execution of ideas."
+      - year: "2020 - Present"
+        role: "Researcher"
+        company: "Caltech AMBER Lab"
+        text: "Designed, simulated, and prototyped an ankle exoskeleton. "
         active: 1
         h_line: 1
 
       - year: "2011 - 2012"
-        role: "Front-end Developer"
-        company: "Google Inc."
-        text: "Monitored technical aspects of the front-end delivery for several projects."
+        role: "Team Lead"
+        company: "Jordan Rocketry Team"
+        text: "Led a student team designing ."
         active: 0
         h_line: 1
 
@@ -190,7 +190,7 @@ resume:
         active: 0
         h_line: 0
   education:
-    title: "Education"
+    title: "Relavant Courses"
     icon: "university"
     items:
       - year: "2006 - 2008"
@@ -216,17 +216,17 @@ skills:
   title: "My Skills"
   columns:
     - type: "default" #skills progress type - default, dotted, circles, list
-      title: "Design"
+      title: "Software"
       icon: "easel"
       items:
-        - label: "Web Design"
-          value: "90" #0-100 progress in %
+        - label: "Solidworks"
+          value: "95" #0-100 progress in %
 
-        - label: "Write Music"
-          value: "65" #0-100 progress in %
+        - label: "Arduino and C++"
+          value: "70" #0-100 progress in %
 
-        - label: "Photoshop"
-          value: "75" #0-100 progress in %
+        - label: "MATLAB"
+          value: "85" #0-100 progress in %
 
         - label: "Graphic Design"
           value: "85" #0-100 progress in %
@@ -299,20 +299,20 @@ portfolio:
       slug: "grid-item"
       active: 1
 
-    - name: "Photo"
-      slug: "photo"
+    - name: "Personal"
+      slug: "personal"
       active: 0
 
-    - name: "Video"
-      slug: "video"
+    - name: "Coursework"
+      slug: "class"
       active: 0
 
-    - name: "Music"
-      slug: "music"
+    - name: "Clubs"
+      slug: "club"
       active: 0
 
-    - name: "Design"
-      slug: "design"
+    - name: "Research"
+      slug: "research"
       active: 0
 
 ### Blog [ blog ]

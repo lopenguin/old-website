@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   {%- seo -%}
 
@@ -32,15 +32,15 @@
   {% if settings.dark_ui == 1 %}
   <link rel="stylesheet" href="{{ 'assets/css/template-dark/dark.css' | relative_url }}" />
   {% endif %}
-  
+
 
   <!--[if lt IE 9]>
   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
+
   <!-- Favicons -->
-  <link rel="shortcut icon" href="{{ 'assets/images/favicons/favicon.ico' | relative_url }}">
+  <link rel="shortcut icon" href="{{ 'assets/images/favicons/penguin.png' | relative_url }}">
 
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
@@ -48,5 +48,5 @@
   {%- endif -%}
 
   {%- include custom-head.html -%}
-  
+
 </head>
