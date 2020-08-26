@@ -24,7 +24,7 @@ email: "lorenzo@caltech.edu"
 description: "Caltech mechanical engineering portfolio"
 author: "Lorenzo"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.lorenzos.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://www.lorenzos.me\\" # the base hostname & protocol for your site, e.g. http://example.com
 date_format: "%b %d, %Y"
 
 # paginations & permalinks
