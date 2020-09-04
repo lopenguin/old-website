@@ -9,8 +9,8 @@ about:
   text: "
         <p>
           <strong>Hello! I’m Lorenzo Shaikewitz.</strong><br>
-          I study mechanical engineering at Caltech. My primary interests lie in robotic and mechatronic systems, including design, controls, analysis, and prototyping.
-          <strong>Warning: this website is under construction</strong>
+          I study mechanical engineering at Caltech. My primary interests lie in robotic and mechatronic systems.
+          I seek to understand the complex systems that underpin our world so I may one day contribute to them.
         </p>
         "
   list:
@@ -22,7 +22,7 @@ about:
 
     - label: "Graduation Year"
       value: "2023"
-    #
+
     # - label: "Grad Year"
     #   value: "2023"
 
@@ -171,15 +171,15 @@ resume:
     items:
       - year: "2020 - Present"
         role: "Researcher"
-        company: "Caltech AMBER Lab"
-        text: "Designed, simulated, and prototyped an ankle exoskeleton. "
+        company: "AMBER Lab (Caltech)"
+        text: "Working through the mechanical design, controls, and electrical components of a powered ankle exoskeleton."
         active: 1
         h_line: 1
 
       - year: "2011 - 2012"
         role: "Team Lead"
         company: "Jordan Rocketry Team"
-        text: "Led a student team designing ."
+        text: "Led a student team designing, building, and flying model rockets for Team America Rocketry Challenge and Battle of the Rockets (High School)."
         active: 0
         h_line: 1
 
@@ -190,25 +190,25 @@ resume:
         active: 0
         h_line: 0
   education:
-    title: "Relavant Courses"
+    title: "Favorite Courses"
     icon: "university"
     items:
-      - year: "2006 - 2008"
-        institution: "Art University"
-        city: "New York"
-        text: "Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri"
+      - year: "Fall 2019"
+        institution: "Introduction to Mechatronics"
+        city: "EE/ME 7"
+        text: "Worked with many aspects of mechantronic design through interactive labs. Built a PID control circuit (no software) for a small car receiving sonar signals."
         h_line: 1
 
-      - year: "2005 - 2006"
-        institution: "Programming Course"
-        city: "Paris"
-        text: "Coursework - Git, WordPress, Javascript, iOS, Android."
+      - year: "Fall 2019"
+        institution: "Mechanical Prototyping"
+        city: "ME 13"
+        text: "Learned to use a metal lathe, waterjet, mill, drill press, 3D printer, and laser cutter."
         h_line: 1
 
-      - year: "2004 - 2005"
-        institution: "Web Design Course"
-        city: "London"
-        text: "Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript"
+      - year: "Winter/Spring 2020"
+        institution: "Electricity and Magnetism"
+        city: "Ph 1b/c"
+        text: "Learned the basics of E&M from the ground up. Fascinating content."
         h_line: 0
 
 ### Skills [ skills ]
@@ -217,7 +217,7 @@ skills:
   columns:
     - type: "default" #skills progress type - default, dotted, circles, list
       title: "Software"
-      icon: "easel"
+      icon: "android-desktop"
       items:
         - label: "Solidworks"
           value: "95" #0-100 progress in %
@@ -228,8 +228,8 @@ skills:
         - label: "MATLAB"
           value: "85" #0-100 progress in %
 
-        - label: "Graphic Design"
-          value: "85" #0-100 progress in %
+        - label: "Altium (PCB)"
+          value: "50" #0-100 progress in %
 
     - type: "dotted" #skills progress type - default, dotted, circles, list
       title: "Languages"

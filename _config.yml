@@ -21,7 +21,7 @@
 # basic settings
 title: "Lorenzo Shaikewitz"
 email: "lorenzo@caltech.edu"
-description: "Caltech mechanical engineering portfolio"
+description: "Portfolio"
 author: "Lorenzo"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.lorenzos.me" # the base hostname & protocol for your site, e.g. http://example.com
@@ -67,6 +67,7 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default.
