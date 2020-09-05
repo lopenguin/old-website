@@ -33,7 +33,7 @@ future-projects:
   title: "Project Ideas"
   text: "
         <p>
-        Just a few projects I think are interesting but I haven't found the time to work on yet:
+        Here are few projects I think are interesting but I haven't found the time to work on yet. Contact me if your interested!
           <ul>
             <li>Flyable model airplane</li>
             <li>Bipedal robot</li>
@@ -131,7 +131,7 @@ pricing:
 
 ### Facts [ facts ]
 facts:
-  title: "Outside Interests"
+  title: "Fun"
   items:
     - icon: "disc"
       name: "Ultimate Frisbee"
