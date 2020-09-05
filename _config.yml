@@ -21,7 +21,7 @@
 # basic settings
 title: "Lorenzo Shaikewitz"
 email: "lorenzo@caltech.edu"
-description: "Portfolio"
+description: "Engineering Portfolio"
 author: "Lorenzo"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.lorenzos.me" # the base hostname & protocol for your site, e.g. http://example.com

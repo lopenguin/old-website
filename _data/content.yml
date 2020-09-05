@@ -9,22 +9,41 @@ about:
   text: "
         <p>
           <strong>Hello! I’m Lorenzo Shaikewitz.</strong><br>
-          I study mechanical engineering at Caltech. My primary interests lie in robotic and mechatronic systems.
-          I seek to understand the complex systems that underpin our world so I may one day contribute to them.
+          I study mechanical engineering at Caltech.
+          My primary interests lie in robotic and mechatronic systems, but I am always interested in other fields.
         </p>
         "
   list:
     - label: "University"
       value: "Caltech"
 
-    - label: "Major"
+    - label: "Exp. Major"
       value: "Mechanical"
+
+    - label: "Exp. Minor"
+      value: "Controls (CDS)"
 
     - label: "Graduation Year"
       value: "2023"
 
     # - label: "Grad Year"
     #   value: "2023"
+
+future-projects:
+  title: "Project Ideas"
+  text: "
+        <p>
+        Just a few projects I think are interesting but I haven't found the time to work on yet:
+          <ul>
+            <li>Flyable model airplane</li>
+            <li>Bipedal robot</li>
+            <li>Wearable smart watch</li>
+            <li>Model rocket AQI monitoring</li>
+          </ul>
+        </p>
+        "
+
+
 
 ### Services [ services ]
 services:
@@ -112,19 +131,19 @@ pricing:
 
 ### Facts [ facts ]
 facts:
-  title: "Other Interests"
+  title: "Outside Interests"
   items:
     - icon: "disc"
       name: "Ultimate Frisbee"
 
-    - icon: "trophy"
-      name: "15 Awards Won"
+    - icon: "android-bicycle"
+      name: "Mountain Biking"
 
-    - icon: "coffee"
-      name: "1 000 Cups of coffee"
+    - icon: "bonfire"
+      name: "Hiking"
 
-    - icon: "flag"
-      name: "10 Countries Visited"
+    - icon: "ios-book"
+      name: "Reading"
 
 ### Clients [ clients ]
 clients:
@@ -164,7 +183,7 @@ testimonials:
 ### Resume [ resume ]
 # Add links!
 resume:
-  title: "Resume"
+  title: "Interests"
   experience:
     title: "Experience"
     icon: "briefcase"
@@ -176,17 +195,17 @@ resume:
         active: 1
         h_line: 1
 
-      - year: "2011 - 2012"
+      - year: "2016 - 2019"
         role: "Team Lead"
         company: "Jordan Rocketry Team"
         text: "Led a student team designing, building, and flying model rockets for Team America Rocketry Challenge and Battle of the Rockets (High School)."
         active: 0
         h_line: 1
 
-      - year: "2009 - 2010"
-        role: "Senior Developer"
-        company: "Abc Inc."
-        text: "Optimize website performance using latest technology."
+      - year: "Summer 2018"
+        role: "Researcher"
+        company: "Gong Lab (Duke)"
+        text: "Worked on signal processing of novel floresent protein expression. Won best final report award."
         active: 0
         h_line: 0
   education:
@@ -213,7 +232,7 @@ resume:
 
 ### Skills [ skills ]
 skills:
-  title: "My Skills"
+  title: "Skills"
   columns:
     - type: "default" #skills progress type - default, dotted, circles, list
       title: "Software"
@@ -228,68 +247,68 @@ skills:
         - label: "MATLAB"
           value: "85" #0-100 progress in %
 
-        - label: "Altium (PCB)"
+        - label: "Altium (PCB design)"
           value: "50" #0-100 progress in %
 
-    - type: "dotted" #skills progress type - default, dotted, circles, list
-      title: "Languages"
-      icon: "flag"
-      items:
-        - label: "English"
-          value: "90" #0-100 progress in %
-
-        - label: "German"
-          value: "60" #0-100 progress in %
-
-        - label: "Italian"
-          value: "30" #0-100 progress in %
-
-        - label: "French"
-          value: "70" #0-100 progress in %
-
-    - type: "circles" #skills progress type - default, dotted, circles, list
-      title: "Coding"
-      icon: "code"
-      items:
-        - label: "WordPress"
-          value: "90" #0-100 progress in %
-
-        - label: "PHP / MYSQL"
-          value: "75" #0-100 progress in %
-
-        - label: "Angular / JavaScript"
-          value: "85" #0-100 progress in %
-
-        - label: "HTML / CSS"
-          value: "95" #0-100 progress in %
+    # - type: "dotted" #skills progress type - default, dotted, circles, list
+    #   title: "Languages"
+    #   icon: "flag"
+    #   items:
+    #     - label: "English"
+    #       value: "90" #0-100 progress in %
+    #
+    #     - label: "German"
+    #       value: "60" #0-100 progress in %
+    #
+    #     - label: "Italian"
+    #       value: "30" #0-100 progress in %
+    #
+    #     - label: "French"
+    #       value: "70" #0-100 progress in %
+    #
+    # - type: "circles" #skills progress type - default, dotted, circles, list
+    #   title: "Coding"
+    #   icon: "code"
+    #   items:
+    #     - label: "WordPress"
+    #       value: "90" #0-100 progress in %
+    #
+    #     - label: "PHP / MYSQL"
+    #       value: "75" #0-100 progress in %
+    #
+    #     - label: "Angular / JavaScript"
+    #       value: "85" #0-100 progress in %
+    #
+    #     - label: "HTML / CSS"
+    #       value: "95" #0-100 progress in %
 
     - type: "list" #skills progress type - default, dotted, circles, list
       title: "Knowledge"
       icon: "android-list"
       items:
-        - label: "Website hosting"
+        - label: "Mechanical design"
           value: "" #0-100 progress in %
 
-        - label: "iOS and android apps"
+        - label: "Amateur radio (Technician Class)"
           value: "" #0-100 progress in %
 
-        - label: "Create logo design"
+        - label: "3D printing"
           value: "" #0-100 progress in %
 
-        - label: "Design for print"
+        - label: "Model rocketry (Level 1 license)"
           value: "" #0-100 progress in %
 
-        - label: "Modern and mobile-ready"
+        - label: "Soldering"
           value: "" #0-100 progress in %
-
-        - label: "Advertising services include"
-          value: "" #0-100 progress in %
-
-        - label: "Graphics and animations"
-          value: "" #0-100 progress in %
-
-        - label: "Search engine marketing"
-          value: "" #0-100 progress in %
+        #
+        # - label: "Advertising services include"
+        #   value: "" #0-100 progress in %
+        #
+        # - label: "Graphics and animations"
+        #   value: "" #0-100 progress in %
+        #
+        # - label: "Search engine marketing"
+        #   value: "" #0-100 progress in %
 
 ### Portfolio [ portfolio ]
 portfolio:

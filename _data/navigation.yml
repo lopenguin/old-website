@@ -8,24 +8,28 @@
 
 main:
   #about card
+  #DONE!
   - title: "About"
     icon: "person"
     slug: "about"
     sections:
         - about
-        - clients
-        - services
+        - future-projects
+        # - clients
+        # - services
         - facts
 
   #resume card
-  - title: "Resume"
-    icon: "android-list"
+  #DONE! (except for that title; not sure I like it)
+  - title: "Interests"
+    icon: "planet"
     slug: "resume"
     sections:
         - resume
         - skills
 
   #works card
+  #DONE!
   - title: "Projects"
     icon: "ios-cog"
     slug: "projects"
@@ -33,6 +37,7 @@ main:
         - portfolio
 
   #blog card
+  #DONE! (just needs blog pages to be updated)
   - title: "Blog"
     icon: "chatbox-working"
     slug: "blog"
