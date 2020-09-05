@@ -238,7 +238,7 @@ textarea:focus {
 
 .content .title::first-letter,
 .content .title .first-letter::first-letter {
-  color: #c43338;
+  color: #323232/*#c43338*/;
 }
 
 .new-skin .service-items .service-item .icon {

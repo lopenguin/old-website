@@ -35,6 +35,6 @@ main:
     - title: "View Resume"
       icon: ""
       url: "https://drive.google.com/"
-    - title: "Contact Me"
+    - title: "Contact"
       icon: ""
       url: "mailto:lorenzo@caltech.edu"
