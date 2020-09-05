@@ -61,6 +61,18 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
 
+# project color settings
+project-color:
+  primary: 3C1518 #80B3FF
+  hover: EDD4B2
+  primary-rgb: "51,78,88" #"128,179,255"
+  secondary: 69140E #FD6E8A
+  secondary-dark: 3C1518 #A2122F
+
+# project footer settings
+footer:
+  copyright: Lorenzo Shaikewitz
+
 # Build settings
 plugins:
   - jekyll-archives
