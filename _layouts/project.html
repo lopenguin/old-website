@@ -4,8 +4,9 @@
     <body id="page-top" class="index">
     {% include project_nav.html %}
     {% include project_header.html %}
-    {% include project_portfolio_grid.html %}
-    {% include project_about.html %}
+    <div>
+      {{page.content}}
+    </div>
 
     {% include project_footer.html %}
     {% include project_modals.html %}
