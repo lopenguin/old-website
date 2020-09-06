@@ -7,12 +7,14 @@
           <img class="img-responsive" src="{{ page.cover-pic }}" alt="device-photo" />
         {% endif %}
           <span class="textbox">
+            <span class="black-color">
             <span class="page-title"> {{ page.title }} </span>
             <br>
             <span class="page-subtitle"> {{page.date}} </span>
             <p>
               {{page.content}}
             </p>
+            </span>
             {% for item in page.main %}
               <a id="{{item.slug}}">
                 <span class="black-color">
@@ -21,6 +23,24 @@
               </a>
               <body>{{item.body}}</body>
             {% endfor %}
+            <!-- Optional posts footer -->
+            {% if page.posts-tag And page.posts-tag != "" And page.posts-tag != nil %}
+              <span class="black-color">
+                <h1>Project Evolution</h1>
+                <ul>
+                {% for tag in site.tags %}
+                  {% if tag[0] == page.posts-tag %}
+                    {% for post in tag[1] %}
+                    <li>
+                      <a href=\"{{post.url}}\">{{post.title}}</a>
+                      {{post.excerpt}}
+                    </li>
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              </span>
+            {% endif %}
           </span>
       </div>
     </div>

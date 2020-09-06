@@ -1,10 +1,12 @@
 ---
 # Put a short, abstract-like thing in a file in _works.
 # Be really carefuly with quotes. Just use the escape (forward slash)
+# Help with columns/images: https://getbootstrap.com/docs/3.3/examples/grid/
 
 layout: project
 title: "Walker (Version 1)"
 date: "4/4/2020"
+posts-tag: walker-v1
 
 # Sections
 main:
@@ -25,8 +27,50 @@ main:
   - h1: "Mechanical Design"
     slug: "meche"
     body: "
+          <div class=\"col-md-3\">
+              <img src=\"/assets/img/works/walker_v1/Solidworks_design_v1.jpg\" class=\"img-fluid\" style=\"width:100%\">
+          </div>
+          <div class=\"col-md-9\">
+            <p>The Walker was designed around the idea of having two legs and two motors, connected by a thin bed. As prototyping ensued, a third leg was added for stability on the back on the robot. Parts used in the mechanical design include:</p>
+            <ul>
+                <li>3D printed legs (x2, designed and printed by me)</li>
+                <li>Motors (to design the legs and dimension the bed)</li>
+                  <ul>
+                    <li>Gear ratio of 41:1 and 140 rpm unloaded (<a href=\"https://cdn.sparkfun.com/datasheets/Robotics/DG01D.jpg\">datasheet</a>)</li>
+                  </ul>
+                <li>Cardboard (for the bed)</li>
+                <li>Wood (for the stabilizing leg)</li>
+                <li>Duct tape (to hold the prototype together)</li>
+            </ul>
+            The first thing that I designed was the legs. The upper circle cutout is dimensioned to press fit with the motor axle, creating a seamless, strong joint. The leg itself is designed to be as long as possible (a leg 1 mm longer would not have fit on the 3D printer bed). The foot provides a broad base that the robot can balance on.
+          </div>
+          <img src=\"/assets/img/works/walker_v1/Leg.jpg\">
+          <p>The leg was printed with 70% infill. In retrospect, that made it too heavy and should be decreased, especially for a part that does not face much structural strain.</p>
+          <p>Connected to the motors by duct tape (to allow easy removal) is the bed. Limited by the materials I have at home (thanks coronavirus), the bed was a cardboard box I found around the house. By accident, I stumbled upon a really good body. It was light, easy to mount things to, and had an inside where the electronics could be stored. The biggest thing it lacked was mounting holes; the thing body made it very hard to attach anything without using glue or tape.</p>
+          <p>The biggest thing change to the original design was the addition of a stabilizing leg behind the body. As soon as I turned on the motors it became clear something like this was necessary. Without something to push against, the robot can’t move and just falls over. It needed something behind it to counteract the force as the legs pushed backwards. I solved this with a wooden ruler, attached to the back of the Walker as a stabilizer. It reaches just far enough to touch the ground at a slight angle, allowing the robot to move under its own power.</p>
+          <p>To prevent the legs from moving too far forward and toppling the robot, I added a pencil that serves as a stopper. When the legs reach this pencil, they can no longer move and further forward.</p>
+          "
+  - h1: "Electrical Component"
+    slug: "electrical"
+    body: "
+          <p>The electrical component of the Walker needed to drive the motors in a way that allowed the robot to walk. The best way to do this with the parts I had on hand was to use an Arduino and h-bridge. The final set of parts are:</p>
+          <ul>
+            <li> Arduino Uno</li>
+              <ul><li>Sends digital pulses with PWM to control motor speed and direction according to a program.</li></ul>
+            <li> L293D (<a href=\"http://www.ti.com/lit/ds/symlink/l293.pdf\">datasheet</a>)</li>
+              <ul><li>H-bridge chip. Allows separation of PWM signal and motor power supply using a Darlington transistor. Also allows control of motor direction using digital signal.</li></ul>
+            <li> Motor (x2)</li>
+            <li> Power supply</li>
+              <ul><li>5 V, 700 mA max current.</li></ul>
+          </ul>
+          In retrospect, the main problem with this project was the power supply, which does not provide enough current to really drive the two motors. The components were arranged according to the circuit diagram below.
+          <img src=\"/assets/img/works/walker_v1/mk2_circuit.png\">
+          "
+  - h1: "Code"
+    slug: "code"
+    body: "
           <p>
-
+            All programming for this project was written in Arduino IDE and exclusively used to control the motor. Since programming was not a focus of this project, it is a very simple set of instructions. The legs move in opposite directions at the same time. For example, the first leg rotates in the forward direction while the second one moves in reverse. To prevent shuffling, moving in reverse occurs for significantly longer than moving forward does. While one leg is moving in reverse, the other one does not move, then moves forward, then stops moving again. This algorithm allows the robot to move–slowly but surely–on its own power.
           </p>
           "
 ---

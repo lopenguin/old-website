@@ -64,10 +64,10 @@ jekyll-archives:
 # project color settings
 project-color:
   primary: FFFFFF #80B3FF
-  hover: D55028
+  hover: DADADA
   primary-rgb: "51,78,88" #"128,179,255"
-  secondary: FFFFFF #FD6E8A
-  secondary-dark: 69140E #A2122F
+  secondary: 646464 #FD6E8A
+  secondary-dark: B1180D #A2122F
 
 # project footer settings
 footer:
