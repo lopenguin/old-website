@@ -20,12 +20,19 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                    {% for item in page.main %}
+                      {% if item.slug != "" %}
+                        <li class="page-scroll">
+                          <a href="#{{item.slug}}">{{item.h1}}</a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                    <!-- <li class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
-                    </li>
+                    </li> -->
                     <!-- <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li> -->

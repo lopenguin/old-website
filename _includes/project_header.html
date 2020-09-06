@@ -3,14 +3,25 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        {% if page.profile-pic And page.profile-pic != "" And page.profile-pic != nil %}
-          <img class="img-responsive" src="{{ page.profile-pic }}" alt="device-photo" />
+        {% if page.cover-pic And page.cover-pic != "" And page.cover-pic != nil %}
+          <img class="img-responsive" src="{{ page.cover-pic }}" alt="device-photo" />
         {% endif %}
-        <div class="intro-text">
-          <span class="name">{{ page.title }}</span>
-          <hr>
-          <span class="skills">{{ page.subtitle }}</span>
-        </div>
+          <span class="textbox">
+            <span class="page-title"> {{ page.title }} </span>
+            <br>
+            <span class="page-subtitle"> {{page.date}} </span>
+            <p>
+              {{page.content}}
+            </p>
+            {% for item in page.main %}
+              <a id="{{item.slug}}">
+                <span class="black-color">
+                  <h1>{{item.h1}}</h1>
+                </span>
+              </a>
+              <body>{{item.body}}</body>
+            {% endfor %}
+          </span>
       </div>
     </div>
   </div>
