@@ -312,7 +312,7 @@ skills:
 
 ### Portfolio [ portfolio ]
 portfolio:
-  title: "Recent Works"
+  title: "Projects"
   filters:
     - name: "All"
       slug: "grid-item"

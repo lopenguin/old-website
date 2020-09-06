@@ -233,7 +233,7 @@ textarea:focus {
 }
 
 .content .title .first-word {
-  color: #c43338;
+  color: #323232/*#c43338*/;
 }
 
 .content .title::first-letter,
