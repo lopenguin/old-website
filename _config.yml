@@ -67,7 +67,7 @@ project-color:
   hover: DADADA
   primary-rgb: "51,78,88" #"128,179,255"
   secondary: 646464 #FD6E8A
-  secondary-dark: B1180D #A2122F
+  secondary-dark: 262424 #B1180D #A2122F
 
 # project footer settings
 footer:

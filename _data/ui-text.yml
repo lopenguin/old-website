@@ -1,10 +1,10 @@
 # UI default string configuration file
-## 
+##
 ### use ui-text.yml file to quick change all default strings
 
 ui_text:
   archive:        "Archive"
-  blog_post:      "Blog Post"
+  blog_post:      "Post"
   by:             "by"
   share:          "Share"
   share_on:       "Share on"
@@ -22,4 +22,3 @@ ui_text:
   recent_posts:   "Recent Posts"
   latest_posts:   "Latest Posts"
   categories:     "Categories"
-  
