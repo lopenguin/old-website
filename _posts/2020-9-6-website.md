@@ -3,10 +3,10 @@ layout: post
 title: "Website Launch!"
 date: 2020-9-6
 category:
-  - Project
+  - Misc
 image: assets/img/blog/code.jpg
 author: Lorenzo
-tags: autorobot
+tags: website
 ---
 
 Today I launch my new website (the one you're on). I've wanted to have a nice website for a while now, and the 5-week break between the end of SURF and the start of term ended up being a great time to work on it. This website is based off two templates (one for the main site, and one for the project pages), and its source code is publicly available on [GitHub](https://github.com/lopenguin/lopenguin.github.io).
