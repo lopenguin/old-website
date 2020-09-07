@@ -23,7 +23,7 @@ main:
   #DONE! (except for that title; not sure I like it)
   - title: "Interests"
     icon: "planet"
-    slug: "resume"
+    slug: "interests"
     sections:
         - resume
         - skills

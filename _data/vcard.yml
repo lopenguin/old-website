@@ -34,7 +34,7 @@ main:
   buttons:
     - title: "View Resume"
       icon: ""
-      url: "https://drive.google.com/"
+      url: "https://docs.google.com/document/d/1L6_9G_Y89MpoiDJf9JlQUiOLVqDdyPrCKB3GYjgn8oI/edit?usp=sharing"
     - title: "Contact"
       icon: ""
       url: "mailto:lorenzo@caltech.edu"
