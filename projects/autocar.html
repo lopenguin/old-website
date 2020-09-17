@@ -1,0 +1,77 @@
+---
+# Put a short, abstract-like thing in a file in _works.
+# Be really careful with quotes. Just use the escape (forward slash)
+
+layout: project
+title: "Autonomous (ish) Car"
+date: "9/10/2020"
+posts-tag: autorobot
+
+# Sections
+main:
+  - h1: "Overview"
+    slug: ""
+    body: "
+          <p> This was primarily a exploratory project. Mechanically, it utilizes the old four-wheel car design, without any mechanism to steer by moving an axle and just having the motors connect directly to the wheels. It's a product of the limitations of the current time--I'm not on campus, so I don't have access to resources like a 3D printer, laser cutter, or machine shop. Instead, this project focused on the electrical and programming sides of any mechatronic system. By making these systems complex and aiming for autonomous movement, I've created a set of template code for use in future, more mechanically complicated projects.</p>
+          <h2 class=\"black-color\"> Goals </h2>
+            <ul>
+              <li> Develop a simple mechanical platform to accomodate modular electronics and control frameworks </li>
+              <li> Use a minimal number of sensors </li>
+              <li> Create a standardized power supply circuit for motors </li>
+              <li> Write a reusable set of code for controlling motors, sensors, and servos </li>
+            </ul>
+            <a href = \"https://github.com/lopenguin/autocar-v1\"> View code (GitHub repo) </a>
+          "
+  - h1: "Car Body"
+    slug: "body"
+    body: "
+          <img src=\"/assets/img/works/autocar/autocarparts.jpg\">
+          <p>
+            The body of this thing is super simple. The main board is a piece of foam. Four motors are taped to the bottom (very simple mechanical design, I told you). Putting the motors on the bottom frees up a lot of space on the top of the car, but it also causes buckling under the increasing weight of the car.
+          </p>
+          <p>
+            The top surface has two protrusions that hold an elevated breadboard. This gave more space for circuitry and especially the battery and motor control circuit. It also isolates the IMU and other sensors from the highly magnetic battery (which threw off readings early on). The elevated platform on the front holds the distance sensor, allowing it to rotate 180 degrees to make sure the car is not about to rotate into a wall.
+          </p>
+          "
+  - h1: "Circuit"
+    slug: "circuit"
+    body: "
+          <p>
+            The most complex physical part of this car is the circuit. It mostly uses the I2C protocol for simple communication with the following components:
+            <ul>
+              <li><b>Microcontroller.</b> The brains of the operation is a <a href=\"https://www.sparkfun.com/products/15444\"> Sparkfun Redboard Artemis </a>. I chose this board mainly because I have one, but it is also well-suited for this application. It contains more memory and operates much faster than a normal Arduino (like an Uno), it's 32 bit, and it has machine learning capabilities and low-power bluetooth (both of which I never used, but I could've used!)</li>
+              <li><b>Sensors</b>
+                <ul>
+                  <li><a href=\"https://www.sparkfun.com/products/14722\">Distance sensor.</a> This guy is a pretty nice laser distance sensor. It's used during driving to detect walls, and during wall avoidance as an aid in determining the path of travel.</li>
+                  <li><a href=\"https://www.sparkfun.com/products/15335\">IMU.</a> This is a pretty normal IMU. I'm not using the gyroscope, but the accelerometer works as secondary wall/obstacle encountering alert system. A large acceleration generally indicates something was hit (or a stop/start operation was performed successfully). The reason I got an IMU is actually the magnetometer; even though it is pretty inaccurate and affected by all the magnets in my room, it works as a nice compass so the car can follow a cardinal direction on command.</li>
+                </ul>
+              </li>
+              <li><b>Servo.</b> A tiny servo (virtually no torque is needed) used to turn the distance sensor 180 degrees. Helps with assessing the viability of turns and route-finding.</li>
+              <li><b>Battery.</b> A nice <a href=\"https://www.sparkfun.com/products/11856\">2200mAh 2S lipo</a> with high discharge. Fixes the main problem from the last walker problem: not enough current to go through the motor. My only complaint is dealing with the Deans connector it uses can get annoying (don't buy Sparkfun's adapter).</li>
+              <li><b>Data logger.</b> This is an <a href=\"https://www.sparkfun.com/products/15164\">SD card logger</a>. It's a nice alternative to following the car around with a cord connected to my laptop. If I really knew what I was doing I would have bluetooth data logging but this is easy to use and overall has been a good solution.</li>
+              <li><b>Motor power supply.</b> Okay this is really just a L239D (<a href=\"https://www.ti.com/lit/ds/symlink/l293.pdf\">datasheet</a>), same circuit as the <a href=\"/projects/walkerv1\">walker project</a>. But, I soldered it onto a solderable breadboard. The solderable breadboard takes large currents much better, and has headers so I can use the assembled thing in future projects. Just another modular part to add to my toolkit.</li>
+              <li>Other than that, I've got a few buttons to trigger the program. Oh yeah, and also the <a href=\"https://www.sparkfun.com/products/13302\">four motors</a>. The motors have worked okay, they were cheap and aren't the most powerful. No specialized considerations here.
+            </ul>
+            I'm not going to include a circuit diagram here because the parts really aren't that complex. The motor board is hooked up just like in the walker project, and the rest of the senors are connected via I2C (4 wires: 3.3V, GND, SDA, SCL).
+          </p>
+          "
+  - h1: "Control"
+    slug: "control"
+    body: "
+          <p>
+            Control, or at least programming, was my focus for this project. This car is capable of moving in a predefined direction (magnetically determined) and navigating around obstacles when it encounters them.
+          </p>
+          <p>
+            I began with a focus on modular design, trying to make sure that any segment of the program that my come in useful for a different project could be reused. To this end, I created a motor class that the Car class inherited from, created a set of overloaded functions for each sensor (senBegin(), senRead()), and used 5 files as part of the program.
+          </p>
+          <p>
+            The later part of the project was focused on developing a state machine for the car. This took the form of a function (although it could've been a class) with a switch statement that allowed only the active state to be executed. There is a low battery state that minimizes function to save battery, a drive state that moves the car towards its goal, a set of avoid states that navigate around obstacles, and an idling state. Each state begins with an entrance function that executes once. Then, the body of the state is executed repeatedly until some exit condition is met. An exit condition for drive, for example, is the distance sensor's detection of an object closeby.
+          </p>
+          The program contains a total of five files:
+          <ul>
+            <li><b>main.ino</b> contains the state machine and setup code. I tried to keep actual implementation to a minimum here; think of it more like an outline of the tasks. In the 'drive' state, the car keeps its predefined direction and checks for obstacles. In the avoid state, the car checks left and right and then turns in the direction that is not blocked.</li>
+            <li><b>car_specifics</b> (cpp and h files) contain the car class, where much of the implementation is done. This class coordinates control of the four motors to move at a certain speed or turn. It also contains a function to point the car towards a predetermined direction using proportional control.</li>
+            <li><b>tranducer_classes</b> (cpp and h files) are the home of the basic sensor functions and the motor class. In retrospect I should have split these into multiple files, but as one set of files they can be included in any project and customized for the project's needs. This is the most modular set of files. It contains the low-level motor control functions and hides the varying intialization and read functions of the different sensors behind two overloaded functions.</li>
+          </ul>
+          "
+---
