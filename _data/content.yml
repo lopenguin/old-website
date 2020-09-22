@@ -190,21 +190,21 @@ resume:
     items:
       - year: "2020 - Present"
         role: "Researcher"
-        company: "<a href=\"http://www.bipedalrobotics.com/\">AMBER Lab (Caltech)</a>"
+        company: "<a href=\"http://www.bipedalrobotics.com/\" target=\"_blank\">AMBER Lab (Caltech)</a>"
         text: "Working through the mechanical design, controls, and electrical components of a powered ankle exoskeleton."
         active: 1
         h_line: 1
 
       - year: "2016 - 2019"
         role: "Team Lead"
-        company: "<a href=\"https://jordanrocketry.weebly.com/\">Jordan Rocketry Team</a>"
+        company: "<a href=\"https://jordanrocketry.weebly.com/\" target=\"_blank\">Jordan Rocketry Team</a>"
         text: "Led a student team designing, building, and flying model rockets for Team America Rocketry Challenge and Battle of the Rockets (High School)."
         active: 0
         h_line: 1
 
       - year: "Summer 2018"
         role: "Researcher"
-        company: "<a href=\"https://neurotoolbox.pratt.duke.edu/\">Gong Lab (Duke)</a>"
+        company: "<a href=\"https://neurotoolbox.pratt.duke.edu/\" target=\"_blank\">Gong Lab (Duke)</a>"
         text: "Worked on signal processing of novel floresent protein expression. Won best final report award."
         active: 0
         h_line: 0

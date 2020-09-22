@@ -20,7 +20,7 @@ main:
               <li> Create a standardized power supply circuit for motors </li>
               <li> Write a reusable set of code for controlling motors, sensors, and servos </li>
             </ul>
-            <a href = \"https://github.com/lopenguin/autocar-v1\"> View code (GitHub repo) </a>
+            <a href = \"https://github.com/lopenguin/autocar-v1\" target=\"_blank\"> View code (GitHub repo) </a>
           "
   - h1: "Car Body"
     slug: "body"
@@ -39,18 +39,18 @@ main:
           <p>
             The most complex physical part of this car is the circuit. It mostly uses the I2C protocol for simple communication with the following components:
             <ul>
-              <li><b>Microcontroller.</b> The brains of the operation is a <a href=\"https://www.sparkfun.com/products/15444\"> Sparkfun Redboard Artemis </a>. I chose this board mainly because I have one, but it is also well-suited for this application. It contains more memory and operates much faster than a normal Arduino (like an Uno), it's 32 bit, and it has machine learning capabilities and low-power bluetooth (both of which I never used, but I could've used!)</li>
+              <li><b>Microcontroller.</b> The brains of the operation is a <a href=\"https://www.sparkfun.com/products/15444\" target=\"_blank\"> Sparkfun Redboard Artemis </a>. I chose this board mainly because I have one, but it is also well-suited for this application. It contains more memory and operates much faster than a normal Arduino (like an Uno), it's 32 bit, and it has machine learning capabilities and low-power bluetooth (both of which I never used, but I could've used!)</li>
               <li><b>Sensors</b>
                 <ul>
-                  <li><a href=\"https://www.sparkfun.com/products/14722\">Distance sensor.</a> This guy is a pretty nice laser distance sensor. It's used during driving to detect walls, and during wall avoidance as an aid in determining the path of travel.</li>
-                  <li><a href=\"https://www.sparkfun.com/products/15335\">IMU.</a> This is a pretty normal IMU. I'm not using the gyroscope, but the accelerometer works as secondary wall/obstacle encountering alert system. A large acceleration generally indicates something was hit (or a stop/start operation was performed successfully). The reason I got an IMU is actually the magnetometer; even though it is pretty inaccurate and affected by all the magnets in my room, it works as a nice compass so the car can follow a cardinal direction on command.</li>
+                  <li><a href=\"https://www.sparkfun.com/products/14722\" target=\"_blank\">Distance sensor.</a> This guy is a pretty nice laser distance sensor. It's used during driving to detect walls, and during wall avoidance as an aid in determining the path of travel.</li>
+                  <li><a href=\"https://www.sparkfun.com/products/15335\" target=\"_blank\">IMU.</a> This is a pretty normal IMU. I'm not using the gyroscope, but the accelerometer works as secondary wall/obstacle encountering alert system. A large acceleration generally indicates something was hit (or a stop/start operation was performed successfully). The reason I got an IMU is actually the magnetometer; even though it is pretty inaccurate and affected by all the magnets in my room, it works as a nice compass so the car can follow a cardinal direction on command.</li>
                 </ul>
               </li>
               <li><b>Servo.</b> A tiny servo (virtually no torque is needed) used to turn the distance sensor 180 degrees. Helps with assessing the viability of turns and route-finding.</li>
-              <li><b>Battery.</b> A nice <a href=\"https://www.sparkfun.com/products/11856\">2200mAh 2S lipo</a> with high discharge. Fixes the main problem from the last walker problem: not enough current to go through the motor. My only complaint is dealing with the Deans connector it uses can get annoying (don't buy Sparkfun's adapter).</li>
-              <li><b>Data logger.</b> This is an <a href=\"https://www.sparkfun.com/products/15164\">SD card logger</a>. It's a nice alternative to following the car around with a cord connected to my laptop. If I really knew what I was doing I would have bluetooth data logging but this is easy to use and overall has been a good solution.</li>
-              <li><b>Motor power supply.</b> Okay this is really just a L239D (<a href=\"https://www.ti.com/lit/ds/symlink/l293.pdf\">datasheet</a>), same circuit as the <a href=\"/projects/walkerv1\">walker project</a>. But, I soldered it onto a solderable breadboard. The solderable breadboard takes large currents much better, and has headers so I can use the assembled thing in future projects. Just another modular part to add to my toolkit.</li>
-              <li>Other than that, I've got a few buttons to trigger the program. Oh yeah, and also the <a href=\"https://www.sparkfun.com/products/13302\">four motors</a>. The motors have worked okay, they were cheap and aren't the most powerful. No specialized considerations here.
+              <li><b>Battery.</b> A nice <a href=\"https://www.sparkfun.com/products/11856\" target=\"_blank\">2200mAh 2S lipo</a> with high discharge. Fixes the main problem from the last walker problem: not enough current to go through the motor. My only complaint is dealing with the Deans connector it uses can get annoying (don't buy Sparkfun's adapter).</li>
+              <li><b>Data logger.</b> This is an <a href=\"https://www.sparkfun.com/products/15164\" target=\"_blank\">SD card logger</a>. It's a nice alternative to following the car around with a cord connected to my laptop. If I really knew what I was doing I would have bluetooth data logging but this is easy to use and overall has been a good solution.</li>
+              <li><b>Motor power supply.</b> Okay this is really just a L239D (<a href=\"https://www.ti.com/lit/ds/symlink/l293.pdf\" target=\"_blank\">datasheet</a>), same circuit as the <a href=\"/projects/walkerv1\" target=\"_blank\">walker project</a>. But, I soldered it onto a solderable breadboard. The solderable breadboard takes large currents much better, and has headers so I can use the assembled thing in future projects. Just another modular part to add to my toolkit.</li>
+              <li>Other than that, I've got a few buttons to trigger the program. Oh yeah, and also the <a href=\"https://www.sparkfun.com/products/13302\" target=\"_blank\">four motors</a>. The motors have worked okay, they were cheap and aren't the most powerful. No specialized considerations here.
             </ul>
             I'm not going to include a circuit diagram here because the parts really aren't that complex. The motor board is hooked up just like in the walker project, and the rest of the senors are connected via I2C (4 wires: 3.3V, GND, SDA, SCL).
           </p>
