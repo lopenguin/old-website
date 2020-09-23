@@ -1,0 +1,93 @@
+---
+# Put a short, abstract-like thing in a file in _works.
+# Be really careful with quotes. Just use the escape (forward slash)
+
+layout: project
+title: "EE/ME 7 Car"
+date: "12/10/2019"
+#posts-tag:
+
+# Sections
+main:
+  - h1: "Overview"
+    slug: ""
+    body: "
+            <b>EE/ME 7</b> is a freshmen lab class focused on mechatronics. Over the quarter we worked on 13 labs that explored various parts of a mechatronic system in depth, including motors, sensors, gears, and many other parts. The final project was to design and build a small car with a partner that moved in the direction of an ultrasonic pulse using only op-amps and transistors. Our car was designed to allow switching between bang-bang and PI control, although only the bang-bang version was ultimately tested.
+            <p><i>I worked on this project with my good friend Chase Blanchette (he's also a Rube Goldberg machine builder—check out his <a href=\"https://www.youtube.com/channel/UCdEAt5IDfLv6bSPWCmB-DfQ\" target=\"_blank\">YouTube channel</a>).</i></p>
+            <img src=\"/assets/img/works/EE-ME_7.jpg\">
+          "
+  - h1: "Circuit"
+    slug: "circuit"
+    body: "
+            The circuitry behind this car needed to drive the motors with a 12 V supply (the easy part) and use two ultrasonic sensors to determine the direction it should turn in order to move towards an ultrasonic signal. This is the overall outline of the logic:
+            <img src=\"/assets/img/works/ee-7/flow_chart.jpg\">
+            All of these steps except for the PWM and motors (right/left included) are driven by op-amps. The red path represents PWM. Offsets had to be hand-tuned using several potentiometers. You can view a scan of the full circuit <a href=\"/assets/img/works/ee-7/full-circuit.pdf\" target=\"_blank\">here</a>. I go into more detail with each part below.
+            <h2 class=\"black-color\">Parts</h2>
+            <ul>
+              <li>6 op-amps (2 chips)</li>
+              <li>1 \"weird\" op-amp (or inverter chip)</li>
+              <li>2 TIP 112</li>
+              <li>2 diodes</li>
+              <li>1 50 Hz pulse generator chip</li>
+            </ul>
+            <div class=\"container\" style=\"padding-top:0;padding-bottom:0;\">
+              <h2 class=\"black-color\">Inputs and Subtractor</h2>
+              <div class=\"col-md-5\">
+                <img src=\"/assets/img/works/ee-7/inputs-subtractor.jpg\">
+              </div>
+              <div class=\"col-md-auto\">
+                <p>The ultrasonic sensors used (L and R) output a voltage proportional to the intensity of an ultrasonic signal near their resonance frequency. In the first step, large resistors are used to ensure their currents are low (allowing use of op-amp idealities). Then, the left sensor output is sent through an inverting op-amp, turning its voltage negative.</p>
+                <p>The summer then adds the right sensor's voltage (V<sub>R</sub>) to the negative left sensor's voltage (V<sub>L</sub>). The summer also multiplied the value by a the natio of R4 to R5. The equavilent equation of this step is:</p>
+                <center class=\"black-color\"><math>V<sub>out</sub>=(V<sub>R</sub>-V<sub>L</sub>)&middot;(-R4/R5)</math></center>
+                <p>I've now turned two signals into a single singal voltage that increases when the ultrasonic pulse moves further left and decreases when the pulse moves further right!</p>
+              </div>
+            </div>
+            <div class=\"container\" style=\"padding-top:0;padding-bottom:0;\">
+              <h2 class=\"black-color\">Offset</h2>
+              <div class=\"col-md-3\">
+                <img src=\"/assets/img/works/ee-7/first-offset.jpg\">
+              </div>
+              <div class=\"col-md-auto\">
+                <p>Now we have a signal that changes based on the location of the ultrasonic pulse, but where is 0? That's what the offset is for. Using an oscilloscope we carefully tuned the potentiometer to make the signal 0 when the ultrasonic pulse was right in front of the car. This way a negative signal means turn right, and a positive signal means turn left! This part also has a fixed gain of 0.1.</p>
+                <p>The next part is where the two control mechanisms diverge. Due to time constraints we were only able to tune the bang-bang version, so I will go into that now <a href=#pwm>(skip to the continuation of the PWM version)</a></p>
+                <div class=\"col-md-5\">
+                  <h2 class=\"black-color\">Bang-bang signal</h2>
+                  <p>Once that offset signal makes its way to the bang-bang part of the circuit, it splits into two paths. The unmodified signal goes to path (5), where it sends a TIP 112 into saturation and triggers the left motor. The other path is inverted and sent to a TIP 112 to trigger the right motor.</p>
+                  <p>IF the voltage at (3) is negative, the voltage at (5) is also negative and the left motor does not turn on. The voltage at (4), however, is inverted to become positive, triggering the right motor. In the opposite case, a positive voltage at (3) means a positive voltage at (5) that triggers the left motor, but a negative voltage at (4) that does not trigger the right motor.</p>
+                </div>
+                <div class=\"col-md-4\">
+                  <img src=\"/assets/img/works/ee-7/end_bang-bang.jpg\">
+                </div>
+              </div>
+            </div>
+            <p>The gains were tuned to push the TIP112 into saturation at a small voltage difference between the left and right ultrasonic sensors. <a href=#motors>Skip to the circuit where (4) and (5) lead</a>.</p>
+
+            <div class=\"container\" style=\"padding-top:0;padding-bottom:0;\">
+              <a id=\"pwm\">
+                <h2 class=\"black-color\">PWM: Integrator and offset</h2>
+              </a>
+              <div class=\"col-md-4\">
+                <img src=\"/assets/img/works/ee-7/integrator-pwm.jpg\">
+              </div>
+              <div class=\"col-md-auto\">
+                <p>This is the PI part of the the PI control. The offset difference between the two ultrasonic sensors is the signal coming in. The integrator op-amp integrates that difference and multiplies it by a constant (<math>-1/(R9&middot;C1)</math>), producing both the proportional and integral parts of the control. That output could feed directly into the pulse generator, but we included one additional offset to make sure the car traveled at about walking speed.</p>
+                <p>From (1), the signal traveled to CVOLT of our 50 Hz pulse generator. The pulse generator converted the analog signal into a digital one (PWM). This PWM signal then traveled to (2).</p>
+                <center><p class=\"black-color\">(1): analog&rarr;pulse generator&rarr;(2): digital PWM</p></center>
+              </div>
+            </div>
+            <div class=\"container\" style=\"padding-top:0;padding-bottom:0;\">
+              <a id=\"motors\">
+                <h2 class=\"black-color\">The Final Step</h2>
+              </a>
+              <div class=\"col-md-7\">
+                <p>The subtracted, offset, integrated, re-offset, and PWM-ized signal enters at (2) and splits into two for each of the motors. The top path is the left motor, which is unmodified except for a large resistor to keep current low and put the TIP112 into saturation.</p>
+                <p>The lower path, to the right motor, has a similar resistor and an additional op-amp. However, this op-amp takes 9V and 0V, so it inverts the signal about the <math>V=4.5 V</math> line. If a 90% ON PWM signal enters through 2, the left motor is given 90% power and the right motor is given 10% power. When the signal is 50% ON, both motors are given 50% power.</p>
+                <p>Once the signal, whether it is bang-bang or PWM, reaches the TIP112, it puts it in saturation and current flows through the motor while the signal is HIGH (ON). The motor is powered with a separate supply and has a small flyback diode across it to safeguard against any inductive spikes from the motor.</p>
+              </div>
+              <div class=\"col-md-5\">
+                <img src=\"/assets/img/works/ee-7/end_all.jpg\">
+              </div>
+            </div>
+            <center class=\"black-color\"><b><a href=/assets/img/works/ee-7/full-circuit.pdf>View the full circuit</a></b></center>
+          "
+---
